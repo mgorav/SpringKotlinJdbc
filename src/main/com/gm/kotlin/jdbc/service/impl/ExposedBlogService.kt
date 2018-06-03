@@ -28,7 +28,7 @@ class ExposedBlogService(private val tt: TransactionTemplate) : BlogService, Ini
                         BlogTable.id.eq(id)
                     }
                     .map {
-                        Blog(id = it[BlogTable.id], title = it[BlogTable.title], content = it[BlogTable.content])
+                        Blog(id = it[BlogTable.id])
                     }
                     .singleOrNull()
 
